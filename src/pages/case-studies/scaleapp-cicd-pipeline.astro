@@ -270,37 +270,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="mb-6">
               <h4 class="font-semibold text-gray-900 mb-4">GitHub Actions Workflow:</h4>
               <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                <pre class="text-green-400 text-sm"><code>name: CI/CD Pipeline
-                on:
-                  push:
-                    branches: [main, develop]
-                  pull_request:
-                    branches: [main]
+<pre class="text-green-400 text-sm"><code>name: CI/CD Pipeline
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
 
-                jobs:
-                  test:
-                    runs-on: ubuntu-latest
-                    steps:
-                      - uses: actions/checkout@v3
-                      - name: Run Tests
-                        run: |
-                          npm test
-                          npm run test:integration
-                      
-                  build:
-                    needs: test
-                    runs-on: ubuntu-latest
-                    steps:
-                      - name: Build Docker Image
-                        run: docker build -t scaleapp:${'{{github.sha}}'}
-                      
-                  deploy:
-                    needs: [test, build]
-                    runs-on: ubuntu-latest
-                    if: github.ref == 'refs/heads/main'
-                    steps:
-                      - name: Deploy to Production
-                        run: ./deploy.sh ${'{{github.sha}}'}</code></pre>
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Tests
+        run: |
+          npm test
+          npm run test:integration
+      
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Image
+        run: docker build -t scaleapp:GITHUB_SHA
+      
+  deploy:
+    needs: [test, build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to Production
+        run: ./deploy.sh GITHUB_SHA</code></pre>
               </div>
             </div>
             
