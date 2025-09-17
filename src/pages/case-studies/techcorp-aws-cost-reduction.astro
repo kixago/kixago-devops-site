@@ -1,0 +1,703 @@
+---
+// src/pages/case-studies/techcorp-aws-cost-reduction.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Case Study: How TechCorp Cut AWS Costs by $3,200/Month | Kixago DevOps"
+  description="Complete AWS cost optimization case study showing how we reduced TechCorp's monthly AWS bill from $7,800 to $4,600 through EC2 rightsizing, storage optimization, and Reserved Instances."
+  keywords="AWS cost optimization case study, reduce AWS bill, EC2 rightsizing, AWS cost reduction, startup infrastructure optimization"
+>
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-50 border-b border-gray-200">
+    <div class="container-custom py-4">
+      <div class="flex items-center space-x-2 text-sm">
+        <a href="/" class="text-gray-500 hover:text-orange-500">Home</a>
+        <span class="text-gray-400">/</span>
+        <a href="/case-studies" class="text-gray-500 hover:text-orange-500">Case Studies</a>
+        <span class="text-gray-400">/</span>
+        <span class="text-gray-900">TechCorp Cost Reduction</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-py bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <!-- Trust Badge -->
+        <div class="mb-6">
+          <span class="trust-badge">
+            ✅ Verified Results • Real Client Case Study
+          </span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          How TechCorp Cut Their AWS Bill by <span class="gradient-text">$3,200/Month</span>
+        </h1>
+        
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          A complete breakdown of how we reduced a Series A SaaS platform's AWS costs by 41% in 30 days without impacting performance or reliability.
+        </p>
+        
+        <!-- Key Metrics -->
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+            <div class="text-2xl font-bold text-red-600 mb-1">$7,800</div>
+            <div class="text-sm text-red-700">Monthly AWS Bill (Before)</div>
+          </div>
+          <div class="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+            <div class="text-2xl font-bold text-green-600 mb-1">$4,600</div>
+            <div class="text-sm text-green-700">Monthly AWS Bill (After)</div>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
+            <div class="text-2xl font-bold text-blue-600 mb-1">41%</div>
+            <div class="text-sm text-blue-700">Cost Reduction</div>
+          </div>
+          <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 text-center">
+            <div class="text-2xl font-bold text-purple-600 mb-1">30 days</div>
+            <div class="text-sm text-purple-700">Implementation Time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Background -->
+  <section class="section-py bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">About TechCorp</h2>
+        
+        <div class="grid lg:grid-cols-3 gap-12 items-center">
+          <div class="lg:col-span-2">
+            <div class="prose prose-lg">
+              <p class="text-gray-700 mb-6">
+                TechCorp is a Series A SaaS platform serving 10,000+ enterprise customers with their project management solution. Founded in 2020, they've grown from a small startup to a team of 45 employees processing over 2M API requests daily.
+              </p>
+              <p class="text-gray-700 mb-6">
+                Like many fast-growing startups, TechCorp prioritized speed over optimization during their early growth phase. Their AWS infrastructure had grown organically without a clear cost management strategy.
+              </p>
+              <p class="text-gray-700">
+                With their Series B fundraising approaching, the executive team wanted to demonstrate strong unit economics and efficient capital allocation to potential investors.
+              </p>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+              <h3 class="font-semibold text-gray-900 mb-4">Company Stats</h3>
+              <div class="space-y-4 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Industry:</span>
+                  <span class="font-medium">SaaS Platform</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Stage:</span>
+                  <span class="font-medium">Series A</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Team Size:</span>
+                  <span class="font-medium">45 employees</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Daily API Calls:</span>
+                  <span class="font-medium">2M+</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">AWS Spend:</span>
+                  <span class="font-medium text-red-600">$7,800/month</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="section-py bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">The Challenge: Skyrocketing AWS Costs</h2>
+        
+        <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg class="w-6 h-6 text-red-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.98-.833-2.75 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-red-700 font-medium">
+                "Our AWS bill increased 340% in 18 months, but our user base only grew 180%. Something was seriously wrong with our infrastructure efficiency."
+              </p>
+              <p class="text-red-600 text-sm mt-1">- David Park, CTO at TechCorp</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="prose prose-lg max-w-none">
+          <h3>Key Problems Identified:</h3>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-4">🔥 Over-Provisioned EC2 Instances</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• 12x t3.large instances running at 15-20% CPU utilization</li>
+                <li>• 4x m5.xlarge database servers barely hitting 25% usage</li>
+                <li>• Auto-scaling groups with minimum capacity set too high</li>
+                <li>• No scheduled scaling for predictable traffic patterns</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-4">💾 Inefficient Storage Configuration</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• 8TB of gp2 EBS volumes (legacy, expensive storage)</li>
+                <li>• Oversized volumes with 60-70% free space</li>
+                <li>• No lifecycle policies for S3 data archival</li>
+                <li>• Frequent snapshots without automated cleanup</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-4">💰 No Reserved Instance Strategy</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• 100% On-Demand pricing for predictable workloads</li>
+                <li>• Missing out on 30-60% savings for stable resources</li>
+                <li>• No Savings Plans utilization</li>
+                <li>• Poor understanding of usage patterns</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-4">📊 Poor Monitoring & Visibility</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• No cost allocation tags for tracking spend by service</li>
+                <li>• Missing CloudWatch metrics for right-sizing decisions</li>
+                <li>• No alerts for budget overruns</li>
+                <li>• Limited understanding of cost drivers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="section-py bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Our 30-Day Optimization Plan</h2>
+        
+        <div class="space-y-8">
+          <!-- Week 1 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-blue-600 font-bold text-lg">1</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-900">Week 1: Discovery & Analysis</h3>
+                <p class="text-gray-600">Complete infrastructure audit and baseline establishment</p>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Actions Taken:</h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                  <li>• Installed AWS Cost Explorer and detailed billing</li>
+                  <li>• Deployed CloudWatch monitoring across all resources</li>
+                  <li>• Implemented comprehensive cost allocation tagging</li>
+                  <li>• Analyzed 90-day usage patterns and trends</li>
+                  <li>• Identified right-sizing opportunities</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Key Findings:</h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                  <li>• 68% of EC2 instances over-provisioned</li>
+                  <li>• $1,240/month in potential EC2 rightsizing savings</li>
+                  <li>• $890/month savings available from gp2→gp3 migration</li>
+                  <li>• $1,070/month Reserved Instance opportunity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Week 2 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-green-600 font-bold text-lg">2</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-900">Week 2: Quick Wins Implementation</h3>
+                <p class="text-gray-600">Low-risk optimizations with immediate impact</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2">✅ Storage Optimization (Completed)</h4>
+                <p class="text-green-700 text-sm mb-2">Migrated 8TB from gp2 to gp3 EBS volumes with optimized IOPS settings</p>
+                <div class="text-green-800 font-medium">Immediate Savings: $890/month</div>
+              </div>
+              
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2">✅ S3 Lifecycle Policies (Completed)</h4>
+                <p class="text-green-700 text-sm mb-2">Implemented Intelligent Tiering and automated archival to Glacier</p>
+                <div class="text-green-800 font-medium">Immediate Savings: $180/month</div>
+              </div>
+              
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <h4 class="font-semibold text-green-800 mb-2">✅ Unused Resources Cleanup (Completed)</h4>
+                <p class="text-green-700 text-sm mb-2">Removed orphaned EBS volumes, unattached elastic IPs, and old snapshots</p>
+                <div class="text-green-800 font-medium">Immediate Savings: $320/month</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Week 3 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-orange-600 font-bold text-lg">3</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-900">Week 3: EC2 Right-Sizing</h3>
+                <p class="text-gray-600">Optimize instance types and implement intelligent scaling</p>
+              </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Instance Type</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Before</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">After</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Monthly Savings</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Web Servers</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">12x t3.large</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">8x t3.medium</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">$640</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Database</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">4x m5.xlarge</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">2x m5.large + Read Replicas</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">$480</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Background Jobs</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">6x c5.large</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Spot Instances</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">$320</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p class="text-blue-800 font-medium">Total EC2 Right-sizing Savings: $1,440/month</p>
+            </div>
+          </div>
+          
+          <!-- Week 4 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-purple-600 font-bold text-lg">4</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-900">Week 4: Reserved Instances & Monitoring</h3>
+                <p class="text-gray-600">Long-term commitments and ongoing optimization</p>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Reserved Instance Strategy:</h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                  <li>• Purchased 1-year RI for stable database instances</li>
+                  <li>• 3-year RI for predictable web server capacity</li>
+                  <li>• Savings Plans for variable compute workloads</li>
+                  <li>• <strong>Total RI Savings: $760/month</strong></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Ongoing Monitoring:</h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                  <li>• Daily cost alerts and budget notifications</li>
+                  <li>• Weekly right-sizing recommendations</li>
+                  <li>• Monthly optimization review meetings</li>
+                  <li>• Automated scaling based on actual usage</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section-py bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">The Results: $3,200 Monthly Savings</h2>
+        
+        <!-- Before/After Comparison -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+          <!-- Before -->
+          <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-8">
+            <h3 class="text-2xl font-semibold text-red-800 mb-6 text-center">Before Optimization</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center py-2 border-b border-red-200">
+                <span class="text-red-700">Monthly AWS Bill:</span>
+                <span class="font-bold text-red-800 text-xl">$7,800</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-red-200">
+                <span class="text-red-700">EC2 Utilization:</span>
+                <span class="font-bold text-red-800">18% Average</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-red-200">
+                <span class="text-red-700">Storage Type:</span>
+                <span class="font-bold text-red-800">100% gp2</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-red-200">
+                <span class="text-red-700">Reserved Instances:</span>
+                <span class="font-bold text-red-800">0%</span>
+              </div>
+              <div class="flex justify-between items-center py-2">
+                <span class="text-red-700">Cost per Customer:</span>
+                <span class="font-bold text-red-800">$0.78</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- After -->
+          <div class="bg-green-50 border-2 border-green-200 rounded-2xl p-8">
+            <h3 class="text-2xl font-semibold text-green-800 mb-6 text-center">After Optimization</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center py-2 border-b border-green-200">
+                <span class="text-green-700">Monthly AWS Bill:</span>
+                <span class="font-bold text-green-800 text-xl">$4,600</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-green-200">
+                <span class="text-green-700">EC2 Utilization:</span>
+                <span class="font-bold text-green-800">65% Average</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-green-200">
+                <span class="text-green-700">Storage Type:</span>
+                <span class="font-bold text-green-800">100% gp3</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-green-200">
+                <span class="text-green-700">Reserved Instances:</span>
+                <span class="font-bold text-green-800">70%</span>
+              </div>
+              <div class="flex justify-between items-center py-2">
+                <span class="text-green-700">Cost per Customer:</span>
+                <span class="font-bold text-green-800">$0.46</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Savings Breakdown -->
+        <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Savings Breakdown</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-green-600 mb-2">$1,440</div>
+              <div class="text-sm text-gray-600">EC2 Right-sizing</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">$890</div>
+              <div class="text-sm text-gray-600">Storage Optimization</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-purple-600 mb-2">$760</div>
+              <div class="text-sm text-gray-600">Reserved Instances</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-orange-600 mb-2">$110</div>
+              <div class="text-sm text-gray-600">Misc. Cleanup</div>
+            </div>
+          </div>
+          <div class="border-t border-gray-300 mt-6 pt-6 text-center">
+            <div class="text-4xl font-bold text-gray-900 mb-2">$3,200/month</div>
+            <div class="text-lg text-gray-600">Total Monthly Savings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonial -->
+  <section class="section-py bg-gray-900 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+          <svg class="w-16 h-16 text-orange-500 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+          </svg>
+        </div>
+        
+        <blockquote class="text-2xl font-medium mb-8">
+          "The ROI was immediate. Kixago paid for itself 4x over in month one. But beyond the cost savings, we finally have visibility into our infrastructure spend and confidence in our scaling strategy."
+        </blockquote>
+        
+        <div class="flex items-center justify-center">
+          <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+            <span class="text-white font-bold text-xl">D</span>
+          </div>
+          <div class="text-left">
+            <div class="font-semibold text-xl">David Park</div>
+            <div class="text-gray-300">CTO & Co-founder, TechCorp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="section-py bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Key Takeaways for SaaS Startups</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">🎯 What Worked</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2">✓</span>
+                <span>Starting with low-risk, high-impact optimizations built trust and momentum</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2">✓</span>
+                <span>Data-driven decisions using 90-day usage patterns prevented over-optimization</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2">✓</span>
+                <span>Phased approach allowed for careful monitoring and rollback if needed</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2">✓</span>
+                <span>Comprehensive tagging strategy enabled ongoing cost visibility</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">⚠️ Common Pitfalls Avoided</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2">×</span>
+                <span>Aggressive rightsizing without proper monitoring can impact performance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2">×</span>
+                <span>Reserved Instance purchases without understanding usage patterns</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2">×</span>
+                <span>Optimizing during peak usage periods can cause unnecessary stress</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2">×</span>
+                <span>Making multiple changes simultaneously makes it hard to measure impact</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Implementation Timeline -->
+        <div class="mt-12 bg-gray-50 rounded-xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900 mb-6">Your Implementation Timeline</h3>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">1</div>
+              <div>
+                <div class="font-medium">Week 1: Free Infrastructure Audit</div>
+                <div class="text-gray-600 text-sm">Identify your biggest cost optimization opportunities</div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">2</div>
+              <div>
+                <div class="font-medium">Week 2-3: Quick Win Implementation</div>
+                <div class="text-gray-600 text-sm">Storage optimization and resource cleanup for immediate savings</div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">3</div>
+              <div>
+                <div class="font-medium">Week 4-5: Strategic Optimization</div>
+                <div class="text-gray-600 text-sm">EC2 rightsizing and Reserved Instance planning</div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">4</div>
+              <div>
+                <div class="font-medium">Ongoing: Monitoring & Optimization</div>
+                <div class="text-gray-600 text-sm">Continuous monitoring and monthly optimization reviews</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Case Studies -->
+  <section class="section-py bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Related Case Studies</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-lg">S</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">ScaleApp CI/CD Success</h3>
+                <p class="text-gray-600 text-sm">DevOps • Automation • Reliability</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              How we eliminated deployment downtime and reduced release time from 45 minutes to 4 minutes with automated CI/CD pipelines.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="text-sm text-gray-600">
+                <span class="font-semibold text-green-600">Zero downtime</span> for 6+ months
+              </div>
+              <a href="/case-studies/scaleapp-cicd-pipeline" class="text-orange-500 hover:text-orange-600 font-medium text-sm">
+                Read Case Study →
+              </a>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-lg">D</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">DataFlow Monitoring Setup</h3>
+                <p class="text-gray-600 text-sm">Monitoring • Alerts • Incident Response</p>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-4">
+              Comprehensive monitoring implementation that prevented 12+ potential outages and reduced MTTR by 80%.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="text-sm text-gray-600">
+                <span class="font-semibold text-blue-600">80% faster</span> incident resolution
+              </div>
+              <a href="/case-studies/dataflow-monitoring" class="text-orange-500 hover:text-orange-600 font-medium text-sm">
+                Coming Soon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-py bg-gradient-to-br from-orange-600 to-red-700 text-white">
+    <div class="container-custom text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+          Ready to Cut Your AWS Bill by 40%?
+        </h2>
+        <p class="text-xl opacity-90 mb-8">
+          Get the same results as TechCorp with a free infrastructure audit. We'll identify your biggest cost optimization opportunities in 24 hours.
+        </p>
+        
+        <!-- Key Benefits -->
+        <div class="grid md:grid-cols-3 gap-6 mb-10 text-center">
+          <div>
+            <div class="text-2xl font-bold mb-2">$3,200</div>
+            <div class="text-sm opacity-80">Average monthly savings</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold mb-2">24 hrs</div>
+            <div class="text-sm opacity-80">Audit delivery time</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold mb-2">$0</div>
+            <div class="text-sm opacity-80">Upfront cost for audit</div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/#contact" class="bg-white text-orange-600 hover:bg-orange-50 font-semibold py-4 px-8 rounded-lg transition-colors">
+            Get My Free AWS Audit
+          </a>
+          <a href="https://cal.com/kixago/15min" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-orange-600 font-semibold py-4 px-8 rounded-lg transition-colors">
+            Book 15-Min Call
+          </a>
+        </div>
+        
+        <p class="text-sm opacity-75 mt-4">
+          No credit card required • Detailed report in 24 hours • Usually saves $500+ in first conversation
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-py bg-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">How quickly can I expect to see cost savings like TechCorp?</h3>
+            <p class="text-gray-700">
+              Storage optimizations (gp2→gp3) and resource cleanup provide immediate savings within 1-2 weeks. EC2 rightsizing typically takes 2-3 weeks for full implementation. Most clients see 60-80% of total savings within the first month.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">Will optimization impact my application performance?</h3>
+            <p class="text-gray-700">
+              All optimizations are based on 90+ days of actual usage data and implemented with careful monitoring. We use a phased approach with rollback plans, ensuring zero performance degradation. TechCorp actually saw improved performance due to better resource allocation.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">What if my AWS setup is different from TechCorp's?</h3>
+            <p class="text-gray-700">
+              Every infrastructure is unique, but the optimization principles remain consistent. Whether you're using containers, serverless, or traditional EC2, there are always opportunities for cost reduction. The free audit will identify your specific optimization opportunities.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">Do you provide ongoing support after optimization?</h3>
+            <p class="text-gray-700">
+              Yes! Our monthly retainer includes continuous monitoring, optimization recommendations, and infrastructure support. Many clients like TechCorp continue finding additional savings as their usage patterns evolve.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

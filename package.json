@@ -9,6 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/noto-sans-hebrew": "^5.2.6",
     "astro": "^5.13.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "tailwindcss": "^4.1.12"
   }
 }
